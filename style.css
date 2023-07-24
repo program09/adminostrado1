@@ -1,0 +1,109 @@
+:root{
+    --backgroung-primary: rgb(237, 242, 252);
+    --color-primary:rgb(238, 243, 247);
+    --color-fondo: #F7F9FD;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--backgroung-primary);
+    background-image: url('https://fondosmil.com/fondo/71335.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_content form{
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0px 2px 20px rgba(168, 168, 168, 0.123)
+}
+
+form .form-body{
+    width: 100%;
+}
+
+.form-body .formulario{
+    width: 100%;
+}
+
+.form-body h3{
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 10px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+input:focus{
+    border: 1px solid #519fe7;
+}
+
+
+#seepassword{
+    display: none;
+}
+
+.btn_being{
+    margin: 10px 0px;
+    width: 100%;
+    padding: 6px 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(76, 158, 235);
+    color: #fff;
+    position: relative;
+}
+.btn_being:hover{
+    box-shadow: 0px 2px 2px rgba(124, 123, 123, 0.137)
+}
+
+.btn_being i{
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+.btn_being:hover i{
+    left: 90%;
+    transition: .5s;
+    visibility: visible;
+    
+}
+
+@media screen and (max-width:500px) {
+    .login_content form{
+        width: 95%;
+    }
+}

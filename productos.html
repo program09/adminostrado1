@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 2</title>
+    
+    <link rel="stylesheet" href="https://program09.github.io/YORDIALCANTARA/public/css/Icons/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--DATA TABLES-->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/dataTables.jqueryui.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/scroller/2.1.1/js/dataTables.scroller.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.jqueryui.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.1.1/css/scroller.jqueryui.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <!--ESTILOS -->
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+<body>
+
+    <div class="container_sistem" id="sistema_contenedor">
+        <div class="aside">
+            <aside>
+                <div class="logo flex flex-center flex-center-center">
+                    <img src="public/img/logo acp 2.png" alt="">
+                </div>
+                <div class="bussines_info">
+                    <br>
+                    <a href="" class="new_sales"><button><i class="fa-light fa-plus"></i> Nueva venta</button></a>
+                    <br><br>
+                    <ul>
+                        <li><a class="title_sect">Administrador</a></li>
+                        <li><a class="a" href="index.html"><i class="fa-light fa-house"></i>Inicio</a></li>
+                        <li><a class="a" href="settings.html"><i class="fa-light fa-gear"></i>Configuraciones</a></li>
+                        <li><a class="a" href="trabajadores.html"><i class="fa-light fa-briefcase"></i>Trabajadores</a></li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><a class="title_sect">Almacén</a></li>
+                        <li><a class="a" href="productos.html"><i class="fa-light fa-box"></i>Productos</a></li>
+                        <li><a class="a" href="categorias.html"><i class="fa-light fa-list-check"></i>Categorías</a></li>
+                        <li><a class="a" href="ventas.html"><i class="fa-light fa-cart-shopping"></i>Ventas</a></li>
+                        <li><a class="a" href="tienda.html"><i class="fa-light fa-shop"></i>Tienda</a></li>
+                    </ul>
+                    <br><br><br><br><br>
+                    <ul>
+                        <li><a class="a" href=""><i class="fa-light fa-right-from-bracket"></i>Salir</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <div class="main">
+            <header class="head_header flex flex-between flex-center">
+                <button class="btn_aside" id="btn_aside"><i class="fa-light fa-bars"></i></button>
+                <ul class="nav_head flex flex-center">
+                    <li>
+                        <button class="flex flex-center">
+                            <img class="fit" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="menu">
+                            <ul>
+                                <li><a href="index.html"><i class="fa-light fa-house"></i>Inicio</a></li>
+                                <li><a href="settings.html"><i class="fa-light fa-gear"></i>Configuraciones</a></li>
+                                <li><a href=""><i class="fa-light fa-right-from-bracket"></i>Salir</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+
+
+
+            <main>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">ACP</a></li>
+                    <li class="breadcrumb-item"><a href="#">Almacén</a></li>
+                    <li class="breadcrumb-item active">Productos</li>
+                </ul>
+
+                <section class="section_dashboard">
+                    <div class="almacen-grid">
+                        
+                        <div class="almacen-item flex flex-center">
+                            <div class="item_icon">
+                                <i class="fa-light fa-box"></i>
+                            </div>
+                            <div class="item_info">
+                                <p>Productos</p>
+                                <p class="py_etr">130</p>
+                            </div>
+                        </div>
+                        <div class="almacen-item flex flex-center">
+                            <div class="item_icon">
+                                <i class="fa-light fa-list-tree"></i>
+                            </div>
+                            <div class="item_info">
+                                <p>Sin stock</p>
+                                <p class="py_etr">5</p>
+                            </div>
+                        </div>
+                        <div class="almacen-item flex flex-center">
+                            <div class="item_icon">
+                                <i class="fa-light fa-money-bill"></i>
+                            </div>
+                            <div class="item_info">
+                                <p>Inversión</p>
+                                <p class="py_etr">Hoy: 30</p>
+                            </div>
+                        </div>
+                        <div class="almacen-item flex flex-center">
+                            <div class="item_icon">
+                                <i class="fa-light fa-file-chart-pie"></i>
+                            </div>
+                            <div class="item_info">
+                                <p>Reporte</p>
+                                <p class="py_etr"><span id="date_report"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section class="section_dashboard">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <button class="add_item"><i class="fa-light fa-plus"></i> Agregar producto</button>
+                            <br><br>
+                            <div class="table-responsive">
+                                <table class="table" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Foto</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Categoría</th>
+                                            <th scope="col">P. Costo</th>
+                                            <th scope="col">P. Venta</th>
+                                            <th scope="col">Stock</th>
+                                            <th scope="col">Estado</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="">
+                                            <td scope="row">123456789</td>
+                                            <td>
+                                                <div class="img_prod">
+                                                    <img class="fit" src="https://cnnespanol.cnn.com/wp-content/uploads/2015/12/manshoes.jpg?quality=100&strip=info&w=460&h=260&crop=1" alt="">
+                                                </div>
+                                            </td>
+                                            <td>qwerg</td>
+                                            <td>casa</td>
+                                            <td>S/ <span>15</span></td>
+                                            <td>S/ <span>20</span></td>
+                                            <td>120</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <button><i class="fa-light fa-edit"></i></button>
+                                                <button><i class="fa-light fa-trash"></i></button>       
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                        <div class="tab-pane fade" id="menu1">
+                            <div class="table-responsive">
+                                <table class="table" id="tabledos">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Stock</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="">
+                                            <td scope="row">123456789</td>
+                                            <td>Nombre</td>
+                                            <td><span>0</span></td>
+                                            <td>S/ <span>123</span></td>
+                                            <td>
+                                                <button><i class="fa-light fa-edit"></i></button>
+                                                <button><i class="fa-light fa-signal-bars"></i></button>       
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+
+            <footer>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> by <a href="https://www.facebook.com/yordi.alcantara.18/">Yordi Alcántara Paico</a></p>
+            </footer>
+        </div>
+
+    </div>
+
+
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Iniciar caja</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" class="form_modal">
+                        <p>Caja actual: S/<span>200</span></p>
+                        <br>
+                        <input type="text" placeholder="Iniciar caja" id="caja" name="caja">
+                        <br><br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+    
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable( {
+                paging: true,
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // opciones de longitud de página
+                language: {
+                    //url: "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json",
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Registros: _MENU_",
+                    "sZeroRecords":    "Sin resultados",
+                    "sEmptyTable":     "No hay datos",
+                    "sInfo":           "Registros del _START_ al _END_ de _TOTAL_",
+                    "sInfoEmpty":      "0 registros",
+                    "sInfoFiltered":   "",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "<i class='fa-light fa-magnifying-glass'></i>",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            } );
+        } );
+        $(document).ready(function() {
+            $('#tabledos').DataTable( {
+                paging: true,
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // opciones de longitud de página
+                language: {
+                    //url: "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json",
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Registros: _MENU_",
+                    "sZeroRecords":    "Sin resultados",
+                    "sEmptyTable":     "No hay datos",
+                    "sInfo":           "Registros del _START_ al _END_ de _TOTAL_",
+                    "sInfoEmpty":      "0 registros",
+                    "sInfoFiltered":   "",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "<i class='fa-light fa-magnifying-glass'></i>",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            } );
+        } );
+
+
+
+    </script>
+
+
+
+    <script>
+        const sistema_contenedor = document.getElementById("sistema_contenedor");
+        const btn_aside = document.getElementById("btn_aside");
+        btn_aside.addEventListener("click",function(){
+            sistema_contenedor.classList.toggle('aside_none');
+        })
+
+        const date_report = document.getElementById('date_report');
+        const date = new Date();
+        const currentDate = date.toLocaleDateString();
+        date_report .innerHTML = currentDate;
+    </script>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

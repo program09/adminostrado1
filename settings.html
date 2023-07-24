@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 2</title>
+    
+    <link rel="stylesheet" href="https://program09.github.io/YORDIALCANTARA/public/css/Icons/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--DATA TABLES-->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/dataTables.jqueryui.min.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/scroller/2.1.1/js/dataTables.scroller.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.jqueryui.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.1.1/css/scroller.jqueryui.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <!--ESTILOS -->
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+<body>
+
+    <div class="container_sistem" id="sistema_contenedor">
+        <div class="aside">
+            <aside>
+                <div class="logo flex flex-center flex-center-center">
+                    <img src="public/img/logo acp 2.png" alt="">
+                </div>
+                <div class="bussines_info">
+                    <br>
+                    <a href="" class="new_sales"><button><i class="fa-light fa-plus"></i> Nueva venta</button></a>
+                    <br><br>
+                    <ul>
+                        <li><a class="title_sect">Administrador</a></li>
+                        <li><a class="a" href="index.html"><i class="fa-light fa-house"></i>Inicio</a></li>
+                        <li><a class="a" href="settings.html"><i class="fa-light fa-gear"></i>Configuraciones</a></li>
+                        <li><a class="a" href="trabajadores.html"><i class="fa-light fa-briefcase"></i>Trabajadores</a></li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><a class="title_sect">Almacén</a></li>
+                        <li><a class="a" href="productos.html"><i class="fa-light fa-box"></i>Productos</a></li>
+                        <li><a class="a" href="categorias.html"><i class="fa-light fa-list-check"></i>Categorías</a></li>
+                        <li><a class="a" href="ventas.html"><i class="fa-light fa-cart-shopping"></i>Ventas</a></li>
+                        <li><a class="a" href="tienda.html"><i class="fa-light fa-shop"></i>Tienda</a></li>
+                    </ul>
+                    <br><br><br><br><br>
+                    <ul>
+                        <li><a class="a" href=""><i class="fa-light fa-right-from-bracket"></i>Salir</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <div class="main">
+            <header class="head_header flex flex-between flex-center">
+                <button class="btn_aside" id="btn_aside"><i class="fa-light fa-bars"></i></button>
+                <ul class="nav_head flex flex-center">
+                    <li>
+                        <button class="flex flex-center">
+                            <img class="fit" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
+                            <span>Usuario</span>
+                        </button>
+                        <div class="menu">
+                            <ul>
+                                <li><a href="index.html"><i class="fa-light fa-house"></i>Inicio</a></li>
+                                <li><a href="settings.html"><i class="fa-light fa-gear"></i>Configuraciones</a></li>
+                                <li><a href=""><i class="fa-light fa-right-from-bracket"></i>Salir</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+
+
+
+            <main>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">ACP</a></li>
+                    <li class="breadcrumb-item"><a href="#">Almacén</a></li>
+                    <li class="breadcrumb-item active">Configuraciones</li>
+                </ul>
+
+                <section class="section_dashboard">
+
+                    <div class="container">
+                        <div class="row">
+                            
+                            <div class="col-md-6 col-sm-12 col-12">
+                                <div class="tarjeta">
+                                    <h4>Datos del usuario</h4>
+                                    <hr>
+                                    <div class="container_form">
+                                        <form action="" id="miFormulario_user">
+                                            <label for="nombre_user">Nombre del usuario:</label>
+                                            <input type="text" placeholder="Nombre del usuario" id="nombre_user" name="nombre_user" autocomplete="off" disabled>
+                                            <label for="apellidos">Apellidos del usuario:</label>
+                                            <input type="text" placeholder="Apellidos del usuario" id="apellidos" name="apellidos" autocomplete="off" disabled>
+                                            <label for="dni">DNI del usuario:</label>
+                                            <input type="text" placeholder="DNI del usuario" id="dni" name="dni" autocomplete="off" disabled>
+                                            <label for="direccion">Dirección del usuario:</label>
+                                            <input type="text" placeholder="Dirección del usuario" id="direccion" name="direccion" autocomplete="off" disabled>
+                                            <label for="celular_user">Celular del usuario:</label>
+                                            <input type="text" placeholder="Celular o teléfono" id="celular_user" name="celular_user" autocomplete="off" disabled>
+                                            <label for="correo_user">Correo del usuario:</label>
+                                            <input type="text" placeholder="Correo electrónico del usuario" id="correo_user" name="correo_user" autocomplete="off" disabled>
+                                            <label for="clave">Confirmación de contraseña:</label>
+                                            <input type="text" placeholder="Contraseña del usuario" id="clave" name="clave" autocomplete="off" disabled>
+                                            <button type="button" id="btn_edit_dates_user"><i class="fa-light fa-pen-to-square"></i> Editar</button>
+                                            <button type="submit" id="btn_add_user" class="btn_add"><i class="fa-light fa-pen-to-square"></i> Actualizar</button>
+                                            <a href=""><button type="button" id="btn_exit_dates_user"><i class="fa-light fa-xmark"></i> Cancelar</button></a>
+                                            
+                                        </form>
+                                        <hr>
+                                        <h4>Cambiar contraseña</h4>
+                                        <form action="" id="miFormulario_clave">
+                                            <label for="clave_new">Contraseña nueva:</label>
+                                            <input type="text" placeholder="Contraseña nueva" id="clave_new" name="clave_new" autocomplete="off" disabled>
+                                            <label for="clave_user">Contraseña actual:</label>
+                                            <input type="text" placeholder="Contraseña actual" id="clave_user" name="clave_user" autocomplete="off" disabled>
+                                            <button type="button" id="btn_edit_dates_clave"><i class="fa-light fa-pen-to-square"></i> Editar</button>
+                                            <button type="submit" id="btn_add_clave" class="btn_add"><i class="fa-light fa-pen-to-square"></i> Actualizar</button>
+                                            <a href=""><button type="button" id="btn_exit_dates_clave"><i class="fa-light fa-xmark"></i> Cancelar</button></a>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-12">
+                                <div class="tarjeta">
+                                    <h4>Datos de la empresa</h4>
+                                    <hr>
+                                    <div class="container_form">
+                                        <form action="" id="miFormulario">
+                                            <label for="nombre">Nombre:</label>
+                                            <input type="text" placeholder="Nombre de la empresa" id="nombre" name="nombre" autocomplete="off" disabled>
+                                            <label for="ruc">Ruc:</label>
+                                            <input type="text" placeholder="RUC de la empresa" id="ruc" name="ruc" autocomplete="off" disabled>
+                                            <label for="direccion">Dirección de la empresa:</label>
+                                            <input type="text" placeholder="Dirección" id="direccion" name="direccion" autocomplete="off" disabled>
+                                            <label for="celular">Celular de la empresa:</label>
+                                            <input type="text" placeholder="Celular o teléfono" id="celular" name="celular" autocomplete="off" disabled>
+                                            <label for="correo">Correo de la empresa:</label>
+                                            <input type="text" placeholder="Correo electrónico" id="correo" name="correo" autocomplete="off" disabled>
+                                            <label for="contrasena">Contraseña de confirmación:</label>
+                                            <input type="password" placeholder="Contraseña del usuario" id="contrasena" name="contrasena" autocomplete="off" disabled>
+                                            
+                                            <button type="button" id="btn_edit_dates"><i class="fa-light fa-pen-to-square"></i> Editar</button>
+                                            <button type="submit" id="btn_add" class="btn_add"><i class="fa-light fa-pen-to-square"></i> Actualizar</button>
+                                            <a href=""><button type="button" id="btn_exit_dates"><i class="fa-light fa-xmark"></i> Cancelar</button></a>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </section>
+                <section class="section_dashboard">
+                    
+                    
+                </section>
+            </main>
+
+
+            <footer>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> by <a href="https://www.facebook.com/yordi.alcantara.18/">Yordi Alcántara Paico</a></p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+        const btn_edit_dates = document.getElementById('btn_edit_dates');
+        const btn_exit_dates = document.getElementById('btn_exit_dates');
+        const btn_add = document.getElementById('btn_add');
+        btn_add.style.visibility = "hidden";
+        btn_add.style.position = "absolute";
+        btn_exit_dates.style.visibility = "hidden";
+        btn_exit_dates.style.position = "absolute";
+        btn_edit_dates.addEventListener('click', () =>{
+            btn_exit_dates.style.visibility = "visible";
+            btn_exit_dates.style.position = "relative";
+            btn_edit_dates.style.visibility = "hidden";
+            btn_edit_dates.style.position = "absolute";
+            btn_add.style.visibility = "visible";
+            btn_add.style.position = "relative";
+            var formulario = document.getElementById("miFormulario");
+            function deshabilitarInputs(formulario) {
+                var inputs = formulario.getElementsByTagName("input");
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+            }
+            deshabilitarInputs(formulario);
+        })
+
+
+
+
+
+        const btn_edit_dates_user = document.getElementById('btn_edit_dates_user');
+        const btn_exit_dates_user = document.getElementById('btn_exit_dates_user');
+        const btn_add_user = document.getElementById('btn_add_user');
+        btn_add_user.style.visibility = "hidden";
+        btn_add_user.style.position = "absolute";
+        btn_exit_dates_user.style.visibility = "hidden";
+        btn_exit_dates_user.style.position = "absolute";
+        btn_edit_dates_user.addEventListener('click', () =>{
+            btn_exit_dates_user.style.visibility = "visible";
+            btn_exit_dates_user.style.position = "relative";
+            btn_edit_dates_user.style.visibility = "hidden";
+            btn_edit_dates_user.style.position = "absolute";
+            btn_add_user.style.visibility = "visible";
+            btn_add_user.style.position = "relative";
+            var formulario = document.getElementById("miFormulario_user");
+            function deshabilitarInputs(formulario) {
+                var inputs = formulario.getElementsByTagName("input");
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+            }
+            deshabilitarInputs(formulario);
+        })
+
+
+
+
+        const btn_edit_dates_clave = document.getElementById('btn_edit_dates_clave');
+        const btn_exit_dates_clave = document.getElementById('btn_exit_dates_clave');
+        const btn_add_clave = document.getElementById('btn_add_clave');
+        btn_add_clave.style.visibility = "hidden";
+        btn_add_clave.style.position = "absolute";
+        btn_exit_dates_clave.style.visibility = "hidden";
+        btn_exit_dates_clave.style.position = "absolute";
+        btn_edit_dates_clave.addEventListener('click', () =>{
+            btn_exit_dates_clave.style.visibility = "visible";
+            btn_exit_dates_clave.style.position = "relative";
+            btn_edit_dates_clave.style.visibility = "hidden";
+            btn_edit_dates_clave.style.position = "absolute";
+            btn_add_clave.style.visibility = "visible";
+            btn_add_clave.style.position = "relative";
+            var formulario = document.getElementById("miFormulario_clave");
+            function deshabilitarInputs(formulario) {
+                var inputs = formulario.getElementsByTagName("input");
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+            }
+            deshabilitarInputs(formulario);
+        })
+        
+
+    </script>
+
+
+    <script>
+        function increase(element) {
+          var input = element.parentNode.querySelector('input[type=number]');
+          var value = parseInt(input.value, 10);
+          value = isNaN(value) ? 1 : value;
+          value++;
+          input.value = value;
+        }
+        
+        function decrease(element) {
+          var input = element.parentNode.querySelector('input[type=number]');
+          var value = parseInt(input.value, 10);
+          value = isNaN(value) ? 1 : value;
+          value < 2 ? value = 1 : '';
+          value--;
+          input.value = value;
+        }
+        </script>
+
+
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Iniciar caja</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" class="form_modal">
+                        <p>Caja actual: S/<span>200</span></p>
+                        <br>
+                        <input type="text" placeholder="Iniciar caja" id="caja" name="caja">
+                        <br><br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+    
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable( {
+                paging: true,
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // opciones de longitud de página
+                language: {
+                    //url: "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json",
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Registros: _MENU_",
+                    "sZeroRecords":    "Sin resultados",
+                    "sEmptyTable":     "No hay datos",
+                    "sInfo":           "Registros del _START_ al _END_ de _TOTAL_",
+                    "sInfoEmpty":      "0 registros",
+                    "sInfoFiltered":   "",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "<i class='fa-light fa-magnifying-glass'></i>",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            } );
+        } );
+        $(document).ready(function() {
+            $('#tabledos').DataTable( {
+                paging: true,
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todos"]], // opciones de longitud de página
+                language: {
+                    //url: "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json",
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Registros: _MENU_",
+                    "sZeroRecords":    "Sin resultados",
+                    "sEmptyTable":     "No hay datos",
+                    "sInfo":           "Registros del _START_ al _END_ de _TOTAL_",
+                    "sInfoEmpty":      "0 registros",
+                    "sInfoFiltered":   "",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "<i class='fa-light fa-magnifying-glass'></i>",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            } );
+        } );
+
+
+
+    </script>
+
+
+
+    <script>
+        const sistema_contenedor = document.getElementById("sistema_contenedor");
+        const btn_aside = document.getElementById("btn_aside");
+        btn_aside.addEventListener("click",function(){
+            sistema_contenedor.classList.toggle('aside_none');
+        })
+
+        const date_report = document.getElementById('date_report');
+        const date = new Date();
+        const currentDate = date.toLocaleDateString();
+        date_report .innerHTML = currentDate;
+    </script>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
